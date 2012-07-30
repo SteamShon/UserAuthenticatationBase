@@ -1,4 +1,4 @@
-Recommend2::Application.routes.draw do
+UserAuthenticationBase::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
