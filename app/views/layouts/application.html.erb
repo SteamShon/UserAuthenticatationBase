@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+  <%= yield :head %>
+  <%= yield :scripts %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%= render 'layouts/header' %>
+<div class="container">
+  <% flash.each do |k, v| %>
+    <div class="alert alert-<%= k %>"><%= v %></div>
+  <% end %>
+</div>
+
+<%= yield %>
+
+<%= render 'layouts/footer' %>
+<%= debug(params) if Rails.env.development? %>
+</body>
+</html>
