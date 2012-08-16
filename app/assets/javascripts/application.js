@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//= require jquery.ui.all
+
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
     $(link).closest(".fields").hide();
@@ -30,4 +32,8 @@ $(function() {
   faye.subscribe("/user_classes/show", function(data) {
     eval(data);
   });
+});
+
+$(function (){
+  $('.datepicker').datepicker();
 });

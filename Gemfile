@@ -15,6 +15,12 @@ gem 'gmaps4rails'
 gem "rmagick", "2.12.0", :require => 'RMagick'
 gem 'faye'
 gem 'thin'
+gem 'lazy_high_charts', '~> 1.1.5'
+
+group :assets do
+	gem 'jquery-ui-rails'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do

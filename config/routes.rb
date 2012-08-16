@@ -5,7 +5,7 @@ UserAuthenticationBase::Application.routes.draw do
   resources :user_classes
   resources :students
   resources :behaviors
-  resources :awards, only: [:new, :create]
+  resources :awards, only: [:new, :create, :index]
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
