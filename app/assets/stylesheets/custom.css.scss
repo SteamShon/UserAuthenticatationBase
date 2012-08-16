@@ -173,3 +173,25 @@ input, textarea, select, .uneditable-input {
     	}
   	}		
 }
+
+.class-item {
+  width: 200px;
+  margin: 20px 10px 10px 10px;
+  float: left;
+  background-color:#ffffff;
+  border:solid 1px #B4BBCD;
+  min-height:50px;
+  text-align:justify;
+  word-wrap:break-word; 
+}
+
+.student-item {
+  width: 100px;
+  margin: 20px 10px 10px 10px;
+  float: left;
+  background-color:#ffffff;
+  border:solid 1px #B4BBCD;
+  min-height:50px;
+  text-align:justify;
+  word-wrap:break-word; 
+}

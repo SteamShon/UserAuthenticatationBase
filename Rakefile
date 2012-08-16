@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Recommend2::Application.load_tasks
+UserAuthenticationBase::Application.load_tasks
