@@ -33,7 +33,3 @@ $(function() {
     eval(data);
   });
 });
-
-$(function (){
-  $('.datepicker').datepicker();
-});
