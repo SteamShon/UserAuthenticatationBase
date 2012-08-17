@@ -4,7 +4,7 @@
       <%= link_to "APP NAME", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Home", user_classes_path %></li>
           <li><%= link_to "Help", '#' %></li>
           <% if signed_in? %>
             <li><%= link_to "Classes", user_classes_path %></li>
