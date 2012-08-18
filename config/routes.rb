@@ -10,6 +10,14 @@ UserAuthenticationBase::Application.routes.draw do
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
+
+  resources :awards do
+    collection do
+      get 'new_multiple'
+      post 'create_multiple'
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

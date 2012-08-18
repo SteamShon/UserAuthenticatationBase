@@ -26,6 +26,22 @@ function add_fields(link, association, content) {
     var regexp = new RegExp("new_" + association, "g");
     $(link).parent().before(content.replace(regexp, new_id));
 }
+
+function toggleAll(){
+	$("input:checkbox").each(function(){
+	  $(this).attr('checked', !$(this).attr('checked'));
+	});
+	return false;
+}
+
+function selectAll(){
+	$("input:checkbox").each(function(){
+	  $(this).attr('checked', true);
+	});
+	return false;
+}
+
+
 $(function() {
   var faye = new Faye.Client('http://localhost:9292/faye');
   faye.subscribe('/awards/new', function (data) {
