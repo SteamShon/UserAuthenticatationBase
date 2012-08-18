@@ -27,11 +27,4 @@ module ApplicationHelper
     Net::HTTP.post_form(uri, :message => message.to_json)
   end
 
-  def pie_chart(chart_name, div_id, series_name, data)
-    chart = LazyHighCharts::HighChart.new(chart_name) do |f|
-      f.options[:chart][:renderTo] = div_id
-      f.options[:chart][:defaultSeriesType] = "pie"
-      f.series(:name=>series_name, :data=>data)
-    end
-  end
 end

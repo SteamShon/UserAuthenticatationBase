@@ -13,7 +13,7 @@ gem 'acts_as_votable'
 gem 'omniauth-facebook'
 gem 'gmaps4rails'
 gem "rmagick", "2.12.0", :require => 'RMagick'
-gem 'faye'
+gem 'faye', '~> 0.8.1'
 gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
 
