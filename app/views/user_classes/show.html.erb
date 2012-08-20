@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+    	<%= form_tag(new_multiple_awards_path(user_class: @user_class), method: :get,
+    	remote: true, class: "well form-horizontal", "data-toggle" => "moda") do %>
+	    	<p align="center"><%= link_to "All", '#', onclick: "selectAll()" %>
+	    	<%= link_to "Toggle", '#', onclick: "toggleAll()" %></p>
+    		<% for student in @user_class.students %>
+				<ul>
+					<%= check_box_tag "student_ids[]", student.id %>
+					<%= student.name %>
+				</ul>
+			<% end %>
+			<p align="center"><%= submit_tag "submit", class: "btn btn-mini btn-primary" %></p>
+	    <% end %>
+	</div>
+    <div class="span10">
+	    <div class="row">
+			<div class="span4"><%= "class started on #{@user_class.updated_at}" %></div>
+			<div class="span6"><%= link_to "End Class", awards_path(user_class: @user_class) %></div>
+		</div>
+		<div class="row">
+			<ul class="students">
+				<% for student in @user_class.students %>
+					<div class="student-item well" id="student-<%= student.id %>">
+						<%= render student %>
+					</div>
+				<% end %>
+			</ul>	      
+		</div>
+
+		<div class="row">
+			<%= render partial: "awards/modal" %>	
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<%= render partial: "alert_modal" %>
+			</div>
+		</div> 
+	</div>
+  </div>
+</div>
+

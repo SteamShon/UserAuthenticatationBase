@@ -1,0 +1,12 @@
+<% provide(:title, "My Classes") %>
+<h3>Your Classes
+<%= link_to "Add a class", "#user_class_modal", 
+{ class: "btn btn-large btn-primary", "data-toggle" => "modal" } %>
+</h3>
+<hr >
+<%= render partial: "modal" %>
+<div class="row">
+	<ul class="user_classes">
+		<%= render @user_classes %>
+	</ul>
+</div>

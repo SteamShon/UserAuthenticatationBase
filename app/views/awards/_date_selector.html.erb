@@ -1,0 +1,4 @@
+<%= form_tag("/awards/index", method: :get) do %>
+	<%= text_field_tag "start_date", @user_class.created_at, class: "datepicker" %>
+	<%= text_field_tag "end_date", @user_class.updated_at, class: "datepicker" %>
+<% end %>

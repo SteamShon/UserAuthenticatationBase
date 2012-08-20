@@ -1,0 +1,6 @@
+<i class="icon-user"></i>
+<h3 align="right"><%= student.each_score(@user_class.created_at)[0] %></h3>
+<h2><%= link_to student.name, 
+new_multiple_awards_path("student_ids[]" => student.id, user_class: @user_class), 
+{ remote: true, "data-toggle" => "modal"} %></h2>
+<h3 align="right"><%= student.each_score(@user_class.created_at)[1] %></h3>

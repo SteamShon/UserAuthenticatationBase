@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="span4 offset2">
+		<p class="fields">
+			<%= f.label :behavior, "Behavior" %>
+			<%= f.text_field :title %>
+			<%= f.select :score, options_for_select({ "Good" => "1", "Bad" => "-1" }, "1") %>
+			<%= link_to_remove_fields "remove", f %>	
+		</p>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="fields">
+	<%= form_for @user_class, { remote: true, class: "well form-inline" } do |f| %>
+		<p>
+			<% f.fields_for :behaviors do |builder| %>
+	    		<%= render 'behavior_fields', :f => builder %>
+	  		<% end %>
+		</p>
+		<p><%= link_to_add_fields "Add Behavior", f, :behaviors %></p>
+		<p><%= f.submit "submit" %>
+	<% end %>
+</div>

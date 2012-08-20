@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="span8">
+		<%= form_tag('/students', remote: true, class: "form-horizontal") do %>
+			<%= hidden_field_tag "user_class_id", user_class.id %>
+			<p>
+				<%= text_area_tag "students" , nil, 
+				placeholder: "name of students per line" %>
+			</p>
+			<p>
+				<%= submit_tag "add new students", class: "btn btn-large btn-primary" %>
+			</p>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<% broadcast "/awards/new" do %>
+	<% for student in @students %>
+		$("#student-<%= student.id %>").html("<%= escape_javascript(render(student)) %>");	
+	<% end %>
+	$("#alertModal .modal-header").html("<h1><%= "#{Student.multiple_names(@student_ids)}" %></h1>");
+	$("#alertModal .modal-body").html("<h2><%= "#{@behavior.score} for #{@behavior.title}!" %></h2>");
+	
+	$("#awardModal").modal('hide');
+	$("#alertModal").modal('show');
+
+	$(function() { // wait for the DOM
+	    setTimeout(function () {
+	        var $modal = $('#alertModal'); // your selector; cache it; only query the DOM once!
+	    
+	        $modal.modal('show'); // show modal; this happens after 3 seconds 
+	    
+	        setTimeout(function () {
+	            $modal.modal('hide'); // hode modal; this happens after 8 seconds due to the nested timeouts
+	        }, 500);    
+	    }, 500);
+	});
+<% end %>
+  

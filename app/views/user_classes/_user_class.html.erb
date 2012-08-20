@@ -1,0 +1,13 @@
+<div class="class-item">
+	
+	<i class="icon-book"></i>
+	
+	<h5><%= user_class.title %></h5>
+	<p>
+		<%= link_to "Edit Class", edit_user_class_path(user_class), 
+		{ class: "btn btn-mini btn-primary"} %>
+		<%= link_to "Start Class", user_class_path(user_class, 
+			started: user_class.update_attributes(created_at: Time.now)), 
+		{ class: "btn btn-mini btn-primary" } %>
+	</p>
+</div>

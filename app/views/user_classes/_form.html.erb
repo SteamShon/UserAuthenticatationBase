@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="span2">
+		<%= form_for(UserClass.new, { remote: true,  class: "form-horizontal" }) do |f| %>
+			<p>
+				<fieldset>          
+					<%= f.label :grade, class: "control-group" %>
+					<%= f.select(:grade, 
+					options_for_select((0..6).collect{|g| ["#{g}", g]}), class: "controls") %>
+				</fieldset>
+			</p>
+			<p>
+				<%= f.label :title %>
+				<%= f.text_field :title, placeholder: "seoul school 6-5" %>
+			</p>
+			<p>
+				<%= f.submit "Register new class", class: "btn btn-large btn-primary" %>
+			</p>
+		<% end %>
+	</div>
+</div>

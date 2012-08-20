@@ -1,0 +1,5 @@
+$("#tab1").html("<%= escape_javascript(render :partial => 'awards/form_multiple', 
+	:locals => { :score => 1 }) %>");
+$("#tab2").html("<%= escape_javascript(render :partial => 'awards/form_multiple', 
+	:locals => { :score => -1 }) %>");
+$("#awardModal").modal();

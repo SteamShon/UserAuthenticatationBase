@@ -1,0 +1,3 @@
+$("#good-behaviors").html("<%= escape_javascript( render partial: "behavior", collection: UserClass.behaviors(@user_class.id, 1) ) %>");
+$("#bad-behaviors").html("<%= escape_javascript( render partial: "behavior", collection: UserClass.behaviors(@user_class.id, -1) ) %>");
+$("#new-behaviors").reset();
