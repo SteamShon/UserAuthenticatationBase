@@ -6,13 +6,11 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
-gem 'annotate', '~> 2.4.1.beta', group: :development
 gem "paperclip", "~> 3.0"
 gem 'geocoder'
 gem 'acts_as_votable'
 gem 'omniauth-facebook'
 gem 'gmaps4rails'
-gem "rmagick", "2.12.0", :require => 'RMagick'
 gem 'faye', '~> 0.8.1'
 gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
@@ -23,10 +21,6 @@ end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-group :development do
-	gem 'sqlite3', '1.3.5'
-end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -56,9 +50,9 @@ group :test do
 	gem 'cucumber-rails', '1.2.1', require: false
 	gem 'database_cleaner', '0.7.0'
 end
-group :production do
-	gem 'pg', '0.12.2'
-end
+
+gem 'pg', '0.12.2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
