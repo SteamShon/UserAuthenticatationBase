@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20120810132642) do
   create_table "user_classes", :force => true do |t|
     t.integer  "grade"
     t.string   "title"
-    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
