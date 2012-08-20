@@ -4,7 +4,7 @@
 	<div class="tabbable"> 
 	  <ul class="nav nav-tabs">
 	    <li class="active"><a href="#tab1" data-toggle="tab">학생명단</a></li>
-	    <li><a href="#tab2" data-toggle="tab">상/벌점 추가하기</a></li>
+	    <li><a href="#tab2" data-toggle="tab">칭찬/꾸지람 종류 추가하기</a></li>
 	    
 	  </ul>
 	  <div class="tab-content">
@@ -28,11 +28,11 @@
 	    		<div class="span12">
 	    			<div class="row-fluid">
 	    				<div class="span6" id="good-behaviors">
-	    					<h3>상점</h3>
+	    					<h3>칭찬 종류</h3>
 			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, 1) %>
 			    		</div>
 			    		<div class="span6" id="bad-behaviors">
-			    			<h3>벌점</h3>
+			    			<h3>꾸지람 종류</h3>
 			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, -1) %>
 			    		</div>
 	    			</div>
