@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-UserAuthenticationBase::Application.load_tasks
+Classdojo::Application.load_tasks
