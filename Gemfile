@@ -16,6 +16,7 @@ gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
 gem 'jquery-rails'
 gem 'heroku'
+gem 'private_pub'
 
 group :assets do
 	gem 'jquery-ui-rails'

@@ -1,5 +1,5 @@
-<% broadcast "/awards/new" do %>
-	<% for student in @students %>
+<% publish_to "/awards/new" do %>
+  	<% for student in @students %>
 		$("#student-<%= student.id %>").html("<%= escape_javascript(render(student)) %>");	
 	<% end %>
 	$("#alertModal .modal-header").html("<h1><%= "#{Student.multiple_names(@student_ids)}" %></h1>");
@@ -20,4 +20,3 @@
 	    }, 2000);
 	});
 <% end %>
-  

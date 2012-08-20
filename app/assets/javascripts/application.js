@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//= require private_pub
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
@@ -41,9 +42,4 @@ function selectAll(){
 }
 
 
-$(function() {
-  var faye = new Faye.Client('http://teacher-note.herokuapp.com/faye');
-  faye.subscribe('/awards/new', function (data) {
-    eval(data);
-  });
-});
+
