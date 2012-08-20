@@ -42,7 +42,7 @@ function selectAll(){
 
 
 $(function() {
-  var faye = new Faye.Client('http://teacher-note.herokuapp.com:9292/faye');
+  var faye = new Faye.Client('http://teacher-note.herokuapp.com/faye');
   faye.subscribe('/awards/new', function (data) {
     eval(data);
   });
