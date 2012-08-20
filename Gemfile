@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -14,6 +14,7 @@ gem 'gmaps4rails'
 gem 'faye', '~> 0.8.1'
 gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
+gem 'jquery-rails'
 
 group :assets do
 	gem 'jquery-ui-rails'
@@ -34,7 +35,6 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-gem 'jquery-rails', '2.0.0'
 group :test, :development do
 	gem 'rspec-rails', '2.10.0'
 	gem 'guard-rspec', '0.5.5'
@@ -51,7 +51,13 @@ group :test do
 	gem 'database_cleaner', '0.7.0'
 end
 
-gem 'pg', '0.12.2'
+group :production do
+	gem 'pg'
+end
+
+group :development, :test do
+	gem 'sqlite3'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
