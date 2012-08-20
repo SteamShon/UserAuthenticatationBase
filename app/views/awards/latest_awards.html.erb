@@ -1,0 +1,9 @@
+<% if @awards %>
+	<% for date, list in @awards_by_date %>
+		<p><%= date %></p>
+		<%= render list %>
+	<% end %>
+	<%= will_paginate @awards %>
+<% else %>
+<p>아직 학급이 존재 하지 않습니다. <%= link_to '학급만들기', user_classes_path %></p>
+<% end %>

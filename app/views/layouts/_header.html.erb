@@ -1,14 +1,12 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "APP NAME", root_path, id: "logo" %>
+      <%= link_to "Teach Note", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", user_classes_path %></li>
-          <li><%= link_to "Help", '#' %></li>
           <% if signed_in? %>
-            <li><%= link_to "Classes", user_classes_path %></li>
-            <li><%= link_to "Latest Activities", '#' %></li>
+            <li><%= link_to "나의 학급", user_classes_path %></li>
+            <li><%= link_to "최근 활동", latest_awards_path %></li>
             
             <li id="fat=menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -26,6 +24,7 @@
           <% else %>
             <li><%= link_to "Sign in", signin_path %></li>
           <% end %>
+          <li><%= link_to "Help", '#', onclick: "alert(문의사항은 shom83@hotmail로 메일주세요.);" %></li>
         </ul>
       </nav>
     </div>

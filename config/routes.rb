@@ -10,7 +10,7 @@ Classdojo::Application.routes.draw do
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-
+  match '/latest_awards', to: 'awards#latest_awards'
   resources :awards do
     collection do
       get 'new_multiple'

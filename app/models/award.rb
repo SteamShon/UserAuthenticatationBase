@@ -1,5 +1,5 @@
 class Award < ActiveRecord::Base
-  attr_accessible :user_class_id, :behavior_id, :student_id
+  attr_accessible :user_class_id, :behavior_id, :student_id, :created_at, :updated_at
   belongs_to :user_class
   belongs_to :student
   belongs_to :behavior

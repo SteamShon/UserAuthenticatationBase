@@ -20,6 +20,18 @@ class AwardsController < ApplicationController
     end
   end
 
+  def latest_awards
+    begin 
+      @user_class = UserClass.find(current_user.id)
+    rescue
+      @user_class = nil
+    end
+    if @user_class
+      @awards = @user_class.awards.order("created_at DESC").paginate(params[:page])
+      @awards_by_date = current_user.awards_by_date(@awards)
+    end
+  end
+
   def new_multiple
     @student_ids = params[:student_ids]
     @user_class_id = params[:user_class]
@@ -27,6 +39,7 @@ class AwardsController < ApplicationController
       format.js {}
     end
   end
+  
   def create_multiple
     @user_class_id = params[:user_class_id]
     @behavior_id = params[:behavior_id]
