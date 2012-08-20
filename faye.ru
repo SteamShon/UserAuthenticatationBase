@@ -1,4 +1,8 @@
+require 'rubygems'
+require 'bundler'
+Bundler.require
 require 'faye'
+
 require File.expand_path('../config/initializers/faye_token.rb', __FILE__)
 
 class ServerAuth
@@ -11,7 +15,7 @@ class ServerAuth
     callback.call(message)
   end
 end
-Faye::WebSocket.load_adapter('thin')
+
 faye_server = Faye::RackAdapter.new(:mount => '/faye', :timeout => 45)
 faye_server.add_extension(ServerAuth.new)
 run faye_server

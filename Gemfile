@@ -15,6 +15,7 @@ gem 'faye', '~> 0.8.1'
 gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
 gem 'jquery-rails'
+gem 'heroku'
 
 group :assets do
 	gem 'jquery-ui-rails'
