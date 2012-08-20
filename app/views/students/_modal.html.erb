@@ -1,13 +1,9 @@
 <div class="modal hide" id="studentModal">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">×</button>
-    <h3>Add students name line by line</h3>
+    <h3>학생등록하기</h3>
   </div>
   <div class="modal-body">
     <%= render partial: "students/form", locals: { user_class: user_class } %>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn" data-dismiss="modal">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
   </div>
 </div>

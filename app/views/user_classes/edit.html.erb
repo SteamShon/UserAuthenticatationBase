@@ -3,14 +3,14 @@
 <div id="container">
 	<div class="tabbable"> 
 	  <ul class="nav nav-tabs">
-	    <li class="active"><a href="#tab1" data-toggle="tab">Students</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Behaviors</a></li>
-	    <li><a href="#tab3" data-toggle="tab">Rewards</a></li>
+	    <li class="active"><a href="#tab1" data-toggle="tab">학생명단</a></li>
+	    <li><a href="#tab2" data-toggle="tab">상/벌점 추가하기</a></li>
+	    
 	  </ul>
 	  <div class="tab-content">
 	    <div class="tab-pane active" id="tab1">
 	      <p>
-	      	<%= link_to "Add students", "#studentModal", 
+	      	<%= link_to "학생 등록하기", "#studentModal", 
 	      	{ class: "btn btn-large btn-primary", "data-toggle" => "modal"} %>
 	      </p>
 	      <p>
@@ -28,11 +28,11 @@
 	    		<div class="span12">
 	    			<div class="row-fluid">
 	    				<div class="span6" id="good-behaviors">
-	    					<h3>Good Behaviors</h3>
+	    					<h3>상점</h3>
 			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, 1) %>
 			    		</div>
 			    		<div class="span6" id="bad-behaviors">
-			    			<h3>Bad Behaviors</h3>
+			    			<h3>벌점</h3>
 			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, -1) %>
 			    		</div>
 	    			</div>
@@ -40,7 +40,6 @@
 	    	</div>
 	    	<div class="row-fluid" align="center">
 	    		<div class="span12" id="new-behaviors">
-	    			<h3>New Behaviors</h3>
 	    			<%= render partial: "new_behavior" %>
 	    		</div>
 			</div>

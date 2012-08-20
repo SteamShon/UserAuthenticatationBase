@@ -4,9 +4,9 @@
 	
 	<h5><%= user_class.title %></h5>
 	<p>
-		<%= link_to "Edit Class", edit_user_class_path(user_class), 
+		<%= link_to "수업 설정 하기", edit_user_class_path(user_class), 
 		{ class: "btn btn-mini btn-primary"} %>
-		<%= link_to "Start Class", user_class_path(user_class, 
+		<%= link_to "수업 시작 하기", user_class_path(user_class, 
 			started: user_class.update_attributes(created_at: Time.now)), 
 		{ class: "btn btn-mini btn-primary" } %>
 	</p>

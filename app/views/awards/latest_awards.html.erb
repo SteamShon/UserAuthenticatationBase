@@ -1,9 +1,18 @@
+<div class="row">
+	<ul class="user_classes">
+		<%= render @user_classes %>
+	</ul>
+</div>
 <% if @awards %>
-	<% for date, list in @awards_by_date %>
-		<p><%= date %></p>
-		<%= render list %>
-	<% end %>
-	<%= will_paginate @awards %>
+	<div class="row">
+		<ul>
+			<% for date, list in @awards_by_date %>
+				<h2><%= date %></h2>
+				<%= render list %>
+			<% end %>		
+		</ul>
+		<p><%= will_paginate @awards %></p>
+	</div>
 <% else %>
-<p>아직 학급이 존재 하지 않습니다. <%= link_to '학급만들기', user_classes_path %></p>
+	<p>아직 학급이 존재 하지 않습니다. <%= link_to '학급만들기', user_classes_path %></p>
 <% end %>

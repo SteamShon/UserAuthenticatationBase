@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="span4 offset2">
 		<p class="fields">
-			<%= f.label :behavior, "Behavior" %>
-			<%= f.text_field :title %>
-			<%= f.select :score, options_for_select({ "Good" => "1", "Bad" => "-1" }, "1") %>
-			<%= link_to_remove_fields "remove", f %>	
+			<%= f.label "상/벌점 종류 입력하기" %> 
+			<%= f.text_field :title, placeholder: "상점 또는 벌점의 종류를 입력해 주세요." %>
+			<%= f.select :score, options_for_select({ "상점" => "1", "벌점" => "-1" }, "1") %>
+			<%= link_to_remove_fields "취소", f %>	
 		</p>
 	</div>
 </div>

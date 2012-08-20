@@ -4,10 +4,10 @@
 			<%= hidden_field_tag "user_class_id", user_class.id %>
 			<p>
 				<%= text_area_tag "students" , nil, 
-				placeholder: "name of students per line" %>
+				placeholder: "학생 이름을 한줄에 한명씩 입력하세요. 엔터 키를 치면 다음 줄로 넘어갑니다." %>
 			</p>
 			<p>
-				<%= submit_tag "add new students", class: "btn btn-large btn-primary" %>
+				<%= submit_tag "학생 등록하기", class: "btn btn-large btn-primary" %>
 			</p>
 		<% end %>
 	</div>

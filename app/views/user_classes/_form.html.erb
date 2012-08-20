@@ -3,17 +3,19 @@
 		<%= form_for(UserClass.new, { remote: true,  class: "form-horizontal" }) do |f| %>
 			<p>
 				<fieldset>          
-					<%= f.label :grade, class: "control-group" %>
+					<%= f.label "학년", class: "control-group" %>
 					<%= f.select(:grade, 
-					options_for_select((0..6).collect{|g| ["#{g}", g]}), class: "controls") %>
+					options_for_select((1..6).collect{|g| ["#{g}학년", g]}), class: "controls") %>
 				</fieldset>
 			</p>
 			<p>
-				<%= f.label :title %>
-				<%= f.text_field :title, placeholder: "seoul school 6-5" %>
+				<fieldset>
+					<%= f.label "새 수업의 이름", class: "control-group" %>
+					<%= f.text_field :title, placeholder: "seoul school 6-5" %>	
+				</fieldset>
 			</p>
 			<p>
-				<%= f.submit "Register new class", class: "btn btn-large btn-primary" %>
+				<%= f.submit "새 수업 등록", class: "btn btn-large btn-primary" %>
 			</p>
 		<% end %>
 	</div>
