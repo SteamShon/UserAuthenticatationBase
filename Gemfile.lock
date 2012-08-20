@@ -270,7 +270,7 @@ DEPENDENCIES
   database_cleaner (= 0.7.0)
   factory_girl_rails (= 1.4.0)
   faker (= 1.0.1)
-  faye (~> 0.8.1)
+  faye
   geocoder
   gmaps4rails
   growl (= 1.0.3)
