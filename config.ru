@@ -1,7 +1,4 @@
 # This file is used by Rack-based servers to start the application.
-require ::File.expand_path('../config/environment',  __FILE__)
-run Classdojo::Application
-
 require 'faye'
 require File.expand_path('../config/initializers/faye_token.rb', __FILE__)
 
@@ -19,3 +16,8 @@ end
 faye_server = Faye::RackAdapter.new(:mount => '/faye', :timeout => 45)
 faye_server.add_extension(ServerAuth.new)
 run faye_server
+
+require ::File.expand_path('../config/environment',  __FILE__)
+run Classdojo::Application
+
+
