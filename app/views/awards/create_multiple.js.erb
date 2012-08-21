@@ -5,12 +5,13 @@
 	$("#alertModal .modal-header").html("<h1><%= "#{Student.multiple_names(@student_ids)}" %></h1>");
 	$("#alertModal .modal-body").html("<h2><%= "#{@behavior.score} for #{@behavior.title}!" %></h2>");
 	
+    $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
+    
 	$("#awardModal").modal('hide');
 	$("#alertModal").modal('show');
 
 	$(function() { // wait for the DOM
-	    $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
-        setTimeout(function () {
+	    setTimeout(function () {
 	        var $modal = $('#alertModal'); // your selector; cache it; only query the DOM once!
 	    
 	        $modal.modal('show'); // show modal; this happens after 3 seconds 
