@@ -9,5 +9,7 @@
 		<%= link_to "수업 시작 하기", user_class_path(user_class, 
 			started: user_class.update_attributes(created_at: Time.now)), 
 		{ class: "btn btn-mini btn-primary" } %>
+		<%= link_to "수업 기록 보기", awards_path(user_class: user_class),
+		{ class: "btn btn-mini btn-primary" } %>
 	</p>
 </div>
