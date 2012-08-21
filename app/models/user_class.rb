@@ -1,4 +1,5 @@
 class UserClass < ActiveRecord::Base
+  unloadable
   attr_accessible :grade, :title, :created_at, :updated_at
   belongs_to :user
   has_many :behaviors, :dependent => :destroy
