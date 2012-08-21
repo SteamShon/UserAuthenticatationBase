@@ -1,14 +1,14 @@
 <div class="class-item">
-	
 	<i class="icon-book"></i>
-	
-	<h5><%= user_class.title %></h5>
+	<h4><%= user_class.title %></h4>
 	<p>
 		<%= link_to "수업 설정 하기", edit_user_class_path(user_class), 
 		{ class: "btn btn-mini btn-primary"} %>
 		<%= link_to "수업 시작 하기", user_class_path(user_class, 
 			started: user_class.update_attributes(created_at: Time.now)), 
 		{ class: "btn btn-mini btn-primary" } %>
+	</p>
+	<p>
 		<%= link_to "수업 기록 보기", awards_path(user_class: user_class),
 		{ class: "btn btn-mini btn-primary" } %>
 	</p>

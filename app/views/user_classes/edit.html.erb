@@ -4,10 +4,10 @@
 	<div class="row">
 		<ul class="pager">
 		  <li>
-		    <%= link_to "&larr;Back", user_classes_path %>
+		    <%= link_to "Back", user_classes_path %>
 		  </li>
 		  <li>
-		    <%= link_to "이 수업 시작 하기&rarr;", user_class_path(@user_class, 
+		    <%= link_to "이 수업 시작 하기", user_class_path(@user_class, 
 			started: @user_class.update_attributes(created_at: Time.now)), 
 			{ class: "btn btn-mini btn-primary" } %>
 		  </li>
