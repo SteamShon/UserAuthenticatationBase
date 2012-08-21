@@ -1,15 +1,8 @@
 <% provide(:title, "My Classes") %>
-<div class="row">
-	<ul class="pager">
-		<li><h3>나의 학급</h3></li>
-		<li><%= link_to "새 수업 등록", "#user_class_modal", 
-			{ class: "btn btn-mini btn-primary", "data-toggle" => "modal" } %></li>
-	</ul>
-</div>
+	<h3 align="center">나의 학급 <%= link_to "새 수업 등록", "#user_class_modal", 
+	{ class: "btn btn-mini btn-primary", "data-toggle" => "modal" } %></h3>
 <hr >
-<div class="row">
 	<%= render partial: "modal" %>
-</div>
 <div class="row">
 	<ul class="user_classes">
 		<%= render @user_classes %>

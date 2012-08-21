@@ -9,6 +9,7 @@
 	  });
   </script>
 <% end %>
+
 <div class="row">
 	<%= form_tag("/awards", method: :get, class: "well form-inline") do %>
 		<%= hidden_field_tag "user_class", @user_class.id %>
