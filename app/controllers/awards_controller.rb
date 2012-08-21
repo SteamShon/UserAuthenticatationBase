@@ -49,7 +49,9 @@ class AwardsController < ApplicationController
 
     if Award.create_multiple(@user_class_id, @behavior_id, @student_ids)
       respond_to do |format|
-        format.js {}
+        format.js {
+          
+        }
       end
     else
       render 'new'
