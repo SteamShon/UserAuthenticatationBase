@@ -1,5 +1,5 @@
 <% provide(:title, "Sign in") %>
-<h1>로그 인</h1>
+<h1>로그인</h1>
 <div class="row">
   <div class="span6 offset3">
       <%= form_for(:session, url: sessions_path) do |f| %>
@@ -10,7 +10,7 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
 
-      <%= f.submit "로그 인", class: "btn btn-large btn-primary" %>
+      <%= f.submit "로그인", class: "btn btn-large btn-primary" %>
     <% end %>
 
     <p>아이디가 없으세요? <%= link_to "회원가입!", signup_path %></p>
