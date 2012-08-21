@@ -9,7 +9,8 @@
 	$("#alertModal").modal('show');
 
 	$(function() { // wait for the DOM
-	    setTimeout(function () {
+	    $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
+        setTimeout(function () {
 	        var $modal = $('#alertModal'); // your selector; cache it; only query the DOM once!
 	    
 	        $modal.modal('show'); // show modal; this happens after 3 seconds 
@@ -17,10 +18,7 @@
 	        setTimeout(function () {
 	            $modal.modal('hide'); // hode modal; this happens after 8 seconds due to the nested timeouts
 	        }, 2000);    
-	    }, 2000);
+	    }, 2000); 
 	});
-    $(function() {
-        $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
-    });
 <% end %>
   
