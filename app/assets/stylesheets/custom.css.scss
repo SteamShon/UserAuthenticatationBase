@@ -196,4 +196,9 @@ input, textarea, select, .uneditable-input {
   word-wrap:break-word; 
 }
 
-@media (max-width: 480px) {}
+@media all and (max-width: 480px)  {
+    .half {
+        float: left !important;
+        width: 50% !important;
+    }
+}
