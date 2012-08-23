@@ -5,5 +5,5 @@
 		<i class="icon-thumbs-down"></i>
 	<% end %>
 	<%= behavior.title %>
-	<%= link_to 'X', behavior_path(behavior), confirm: "Are you sure?", method: :delete, remote: true %>
+	<%= remove_link(behavior) %>
 </ul>

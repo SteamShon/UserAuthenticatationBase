@@ -27,4 +27,8 @@ module ApplicationHelper
     Net::HTTP.post_form(uri, :message => message.to_json)
   end
 
+  def remove_link(request)
+    link_to image_tag("http://png-2.findicons.com/files//icons/2015/24x24_free_application/24/erase.png"), 
+    request, confirm: "Are you sure?", method: :delete, remote: true
+  end  
 end

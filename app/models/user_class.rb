@@ -1,9 +1,9 @@
 class UserClass < ActiveRecord::Base
   attr_accessible :grade, :title, :created_at, :updated_at
   belongs_to :user
-  has_many :behaviors, :dependent => :destroy
-  has_many :students
-  has_many :awards
+  has_many :behaviors, dependent: :destroy
+  has_many :students, dependent: :destroy
+  has_many :awards, dependent: :destroy
   accepts_nested_attributes_for :behaviors, :reject_if => lambda {|s| s[:title].blank? }, :allow_destroy => true
   attr_accessible :behaviors_attributes
 

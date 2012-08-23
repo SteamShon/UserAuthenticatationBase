@@ -1,7 +1,16 @@
 <% for student in students %>
 	<div class="student-item well" id="student-<%= student.id %>">
-		<i class="icon-user"></i>
-		<h2><%= student.name %></h2>
-		<%= link_to "X", student, confirm: "Are you sure?", method: :delete, remote: true %>
+		<div class="row">
+			<div class="span2">
+				<i class="icon-user"></i>
+				<h2><%= student.name %></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span2" align="center">
+				<%= remove_link(student) %>
+			</div>
+		</div>
+		
 	</div>
 <% end %>

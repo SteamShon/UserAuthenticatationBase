@@ -9,7 +9,7 @@
 				<%= link_to user_class.title, edit_user_class_path(user_class) %>
 			</div>
 			<div class="span1">
-				<%= link_to 'X', user_class, confirm: "Are you sure?", method: :delete, remote: true %>
+				<%= remove_link user_class %>
 			</div>
 		</div>
 	</div>
