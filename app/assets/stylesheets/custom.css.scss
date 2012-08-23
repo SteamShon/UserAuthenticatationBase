@@ -212,3 +212,9 @@ input, textarea, select, .uneditable-input {
   text-align:justify;
   word-wrap:break-word; 
 }
+
+@media (max-width: 480px) {
+    .modal.fade.in {
+        top: 10px;
+  }
+}
