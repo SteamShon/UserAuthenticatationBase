@@ -14,6 +14,12 @@ class UserClass < ActiveRecord::Base
       UserClass.find(id).behaviors
     end
   end
+  def good_behaviors
+    self.behaviors.where("score = ?", 1)
+  end
+  def bad_behaviors
+    self.behaviors.where("score = ?", -1)
+  end
   
   def get_awards(range, student=nil) 
     result = { "ALL" => {} }
@@ -32,18 +38,5 @@ class UserClass < ActiveRecord::Base
       result["ALL"][award.behavior.title]["count"] += 1
     end
     result
-  end
-
-  def awards_by_date(awards)
-    result = {}
-    awards.each{|award| 
-      k = award.created_at.to_date
-      if result.has_key?(k)
-        result[k] << award
-      else
-        result[k] = []
-      end
-    }
-    return result
   end
 end

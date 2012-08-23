@@ -174,15 +174,32 @@ input, textarea, select, .uneditable-input {
   	}		
 }
 
-.class-item {
-  width: 230px;
-  margin: 20px 10px 10px 10px;
+.class_item {
+  background: #F9F9F9;
   float: left;
-  background-color:#ffffff;
-  border:solid 1px #B4BBCD;
-  min-height:50px;
-  text-align:justify;
-  word-wrap:break-word; 
+  margin: 20px;
+  padding: 12px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 240px;
+  border: 1px solid #DDD;
+  position: relative;
+}
+
+.class_info {
+  color: #3C3B27;
+  float: left;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+.class_title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.class_grade {
+  font-size: 12px;
 }
 
 .student-item {

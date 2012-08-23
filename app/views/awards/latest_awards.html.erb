@@ -1,18 +1,28 @@
 <div class="row">
-	<ul class="user_classes">
-		<%= render @user_classes %>
-	</ul>
-</div>
-<% if @awards %>
-	<div class="row">
-		<ul>
-			<% for date, list in @awards_by_date %>
-				<h2><%= date %></h2>
-				<%= render list %>
-			<% end %>		
-		</ul>
-		<p><%= will_paginate @awards %></p>
+	<div class="tabbable"> 
+	  <ul class="nav nav-tabs">
+	  	<% for user_class in @user_classes %>
+	  		<li><a href="#tab<%= user_class.id %>" data-toggle="tab"><%= user_class.title %></li>
+	  	<% end %>
+	  </ul>
+	  <div class="tab-content">
+	  	<% for user_class in @user_classes %>
+	  	<% awards = user_class.awards.paginate(page: params["#{user_class.id}_page"]).order("created_at DESC") %>
+	  		<div class="tab-pane" id="tab<%= user_class.id %>">
+	  			<% for award in awards %>
+	  				<li>
+	  					<% if award.behavior.score > 0 %>
+	  						<%= image_tag("http://pstatic.classdojo.com/img/awards/1.png") %>
+	  					<% else %>
+	  						<%= image_tag("http://pstatic.classdojo.com/img/awards/2.png") %>
+	  					<% end %>
+	  					<%= award.behavior.title %>
+	  					<%= award.behavior.created_at %>
+	  				</li>
+	  			<% end %>
+	    	</div>
+	    	<%= will_paginate awards %>
+	  	<% end %>
+	  </div>
 	</div>
-<% else %>
-	<p>아직 학급이 존재 하지 않습니다. <%= link_to '학급만들기', user_classes_path %></p>
-<% end %>
+</div>

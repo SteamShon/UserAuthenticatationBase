@@ -32,11 +32,11 @@ class UserClassesController < ApplicationController
   def update
     @user_class = UserClass.find(params[:id])
     @students = @user_class.students
+    
     if @user_class.update_attributes(params[:user_class])
         respond_to do |format|
           format.html {}
           format.js {
-            @user_class = UserClass.find(params[:id])
           }
         end
     else
@@ -46,5 +46,9 @@ class UserClassesController < ApplicationController
   def show
     @user_class = UserClass.find(params[:id])
     @student = @user_class.students[0]
+  end
+  def destroy
+    @user_class = UserClass.find(params[:id])
+    @user_class.destroy
   end
 end

@@ -4,6 +4,11 @@ class BehaviorsController < ApplicationController
 		@user_class = UserClass.find(params[:user_class])
 		@score = params[:score]
 		@user_class.behaviors << Behavior.create(user_class_id: @user_class.id, score: @score)
-		@behaviors = UserClass.find(params[:user_class]).behaviors.where("score = ?", @score)
+		@behaviors = @user_class.behaviors
+	end
+
+	def destroy
+		@behavior = Behavior.find(params[:id])
+		@behavior.destroy
 	end
 end

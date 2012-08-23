@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
   attr_accessible :name, :user_class_id
-  has_many :awards
+  has_many :awards, dependent: :destroy
   belongs_to :user_class
 
   def self.multiple_names(ids, del=",")

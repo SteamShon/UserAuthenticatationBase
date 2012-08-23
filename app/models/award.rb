@@ -12,4 +12,17 @@ class Award < ActiveRecord::Base
   	end
   	return true
   end
+
+  def self.awards_by_date(awards)
+    result = {}
+    awards.each{|award| 
+      k = award.created_at.to_date
+      if result.has_key?(k)
+        result[k] << award
+      else
+        result[k] = []
+      end
+    }
+    return result
+  end
 end

@@ -1,0 +1,23 @@
+<div class="span4">
+	<div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#ALL" data-toggle="tab">All students</a></li>
+          <% for student_id in @awards_group_by.keys.select{|x| x != "ALL" } %>
+          	<li><%= link_to Student.find(student_id).name, "##{student_id}", { "data-toggle" => "tab" } %></li>
+          <% end %>
+        </ul>
+    </div>
+</div>
+<div class="span8">
+        <div class="tab-content">
+	        <div class="tab-pane active" id="ALL">
+	          <%= high_chart("ALL", @charts["ALL"]) %>
+	        </div>
+         	<% for student_id in @awards_group_by.keys.select{|x| x != "ALL" } %>
+          		<div class="tab-pane" id="<%= student_id %>">
+          			<%= high_chart("#{student_id}", @charts["#{student_id}"]) %>
+          		</div>
+          	<% end %>
+        </div>
+    </div>
+</div>

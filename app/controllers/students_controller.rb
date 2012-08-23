@@ -26,4 +26,9 @@ class StudentsController < ApplicationController
 
   def edit
   end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+  end
 end

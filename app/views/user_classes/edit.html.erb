@@ -41,11 +41,11 @@
 	    			<div class="row-fluid">
 	    				<div class="span6" id="good-behaviors">
 	    					<h3>칭찬 종류</h3>
-			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, 1) %>
+			    			<%= render @user_class.good_behaviors %>
 			    		</div>
 			    		<div class="span6" id="bad-behaviors">
 			    			<h3>꾸지람 종류</h3>
-			    			<%= render partial: "behavior", collection: UserClass.behaviors(@user_class.id, -1) %>
+			    			<%= render @user_class.bad_behaviors %>
 			    		</div>
 	    			</div>
 	    		</div>
