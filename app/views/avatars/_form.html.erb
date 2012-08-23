@@ -1,0 +1,10 @@
+<div class="span2" align="center">
+	<%= form_for Avatar.new, html: { remote: true, multipart: true } do |f| %>
+		<p>
+			<%= f.file_field :photo %>
+		</p>
+		<p>
+			<%= f.submit, class: "btn" %>
+		</p>
+	<% end %>
+</div>

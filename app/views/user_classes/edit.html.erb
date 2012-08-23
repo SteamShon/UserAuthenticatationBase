@@ -24,9 +24,15 @@
 	      <p>
 	      	<%= link_to "학생 등록하기", "#studentModal", 
 	      	{ class: "btn btn-large btn-primary", "data-toggle" => "modal"} %>
+	      	<%= link_to "Show Avatars", '#', onClick: "$('.avatar').draggable();$('#avatars').toggle();" %>
 	      </p>
 	      <p>
 	      	<%= render partial: "students/modal", locals: { user_class: @user_class } %>
+	      </p>
+	      <p id="avatars" style="display:none">
+	      	<% for avatar in Avatar.all %>
+	      		<%= image_tag avatar.photo.url, { class: <div id="draggable" class="ui-widget-content"> } %>
+	      	<% end %>
 	      </p>
 	      <div class="row">
 			<ul class="students">

@@ -40,6 +40,7 @@ function selectAll(){
 	return false;
 }
 
+
 $(function() {
   var faye = new Faye.Client('http://fayeredis.herokuapp.com/faye');
   faye.subscribe("/awards/new", function(data) {
