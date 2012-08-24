@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+//= require jquery.ui.all
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");

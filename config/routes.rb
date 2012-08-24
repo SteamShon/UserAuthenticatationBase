@@ -1,6 +1,5 @@
 Classdojo::Application.routes.draw do
- 
-  resources :avatars
+  resources :avatars, only: [:index, :create, :new]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :user_classes

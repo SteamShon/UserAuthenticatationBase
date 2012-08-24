@@ -1,8 +1,18 @@
 <div class="row" id="avatars">
 	<%= render @avatars %>
 </div>
-<div class="row" id="form">
+<div class="row">
 	<div class="span2">
-		<%= link_to "New", new_avatar_path, { remote: true, class: "btn btn-large btn-primary" } %>
+		<%= link_to "New", '#', onClick: "$('#form').toggle();" %>
+	</div>
+</div>
+<div class="row">
+	<div class="span2" style="display:none" id="form">
+		<%= form_for Avatar.new, remote: true do |f| %>
+			<p>
+				<%= f.file_field :photo %>
+				<%= f.submit %>
+			</p>
+		<% end %>
 	</div>
 </div>

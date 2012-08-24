@@ -10,8 +10,9 @@ class AvatarsController < ApplicationController
   def create
   	@avatar = Avatar.create(params[:avatar])
   	respond_to do |format|
-      format.html
-      format.js
+      format.html {
+      	redirect_to avatars_path
+      }
     end
   end
 

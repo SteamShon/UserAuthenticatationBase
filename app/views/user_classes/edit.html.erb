@@ -1,5 +1,11 @@
 <% provide(:title, "edit class") %>
-
+<% content_for :scripts do %>
+<script type="text/javascript">
+	$(".draggable").click(function(){
+		$(".draggable").draggable();
+	});
+</script>
+<% end %>
 <div id="container">
 	<div class="row">
 		<ul class="pager">
@@ -24,16 +30,20 @@
 	      <p>
 	      	<%= link_to "학생 등록하기", "#studentModal", 
 	      	{ class: "btn btn-large btn-primary", "data-toggle" => "modal"} %>
-	      	<%= link_to "Show Avatars", '#', onClick: "$('.avatar').draggable();$('#avatars').toggle();" %>
+	      	<%= link_to "Show Avatars", '#', onClick: "$('#avatars').toggle();" %>
 	      </p>
 	      <p>
 	      	<%= render partial: "students/modal", locals: { user_class: @user_class } %>
 	      </p>
 	      <p id="avatars" style="display:none">
 	      	<% for avatar in Avatar.all %>
-	      		<%= image_tag avatar.photo.url, { class: <div id="draggable" class="ui-widget-content"> } %>
+	      		<%= image_tag avatar.photo.url, { class: "draggable", id: "avatar-#{avatar.id}" } %>
 	      	<% end %>
 	      </p>
+	      <div id="ex2" class="jqDnR jqDrag">
+			  I am an example Box "#ex2"<br />
+			  You can *DRAG* Me.
+			</div>
 	      <div class="row">
 			<ul class="students">
 				<%= render partial: "students/list", locals: { user_class: @user_class, students: @students } %>
