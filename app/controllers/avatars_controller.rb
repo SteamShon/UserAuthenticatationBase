@@ -1,6 +1,6 @@
 class AvatarsController < ApplicationController
   def index
-    @avatars = Avatar.all
+    @avatars = current_user.avatars
   end
 
   def new
@@ -8,7 +8,8 @@ class AvatarsController < ApplicationController
   end
 
   def create
-  	@avatar = Avatar.create(params[:avatar])
+  	@avatar = Avatar.new(params[:avatar])
+    current_user.avatars << @avatar
   	respond_to do |format|
       format.html {
       	redirect_to avatars_path

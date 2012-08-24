@@ -36,14 +36,10 @@
 	      	<%= render partial: "students/modal", locals: { user_class: @user_class } %>
 	      </p>
 	      <p id="avatars" style="display:none">
-	      	<% for avatar in Avatar.all %>
+	      	<% for avatar in current_user.avatars %>
 	      		<%= image_tag avatar.photo.url, { class: "draggable", id: "avatar-#{avatar.id}" } %>
 	      	<% end %>
 	      </p>
-	      <div id="ex2" class="jqDnR jqDrag">
-			  I am an example Box "#ex2"<br />
-			  You can *DRAG* Me.
-			</div>
 	      <div class="row">
 			<ul class="students">
 				<%= render partial: "students/list", locals: { user_class: @user_class, students: @students } %>
