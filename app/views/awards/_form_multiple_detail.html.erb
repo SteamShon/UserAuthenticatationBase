@@ -8,6 +8,6 @@
 		options_for_select((-10..10).collect{|x| ["#{x}점", x] }) %>
 	<%= select_tag "behavior[is_detail]", 
 		options_for_select({"이 항목을 칭찬/꾸지람 목록에 추가하기" => 0, 
-			"이 항목을 추가 하지 않고 이번만 사용하기" => 1}) %>
+			"이 항목을 추가 하지 않고 이번만 사용하기" => 1}, 1) %>
 	<%= submit_tag "submit" %>
 <% end %>
