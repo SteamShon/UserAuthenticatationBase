@@ -4,7 +4,7 @@
 			<%= f.label "칭찬/꾸지람 종류 입력하기" %> 
 			<%= f.text_field :title, placeholder: "칭찬/꾸지람의 종류를 입력해 주세요." %>
 			<%= f.select :score, options_for_select((-10..10).collect{|x| ["#{x}점", x] }) %>
-			<%= f.hidden_field :is_detail, value: false %>
+			<%= f.hidden_field :is_detail, value: 0 %>
 			<%= link_to_remove_fields "취소", f %>	
 		</p>
 	</div>
