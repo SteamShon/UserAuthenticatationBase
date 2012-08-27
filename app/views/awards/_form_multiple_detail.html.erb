@@ -1,0 +1,10 @@
+<%= form_tag(create_multiple_awards_path, { remote: true }) do %>
+	<% for student_id in @student_ids %>
+		<%= hidden_field_tag "student_ids[]", student_id %>
+	<% end %>
+	<%= hidden_field_tag "user_class_id", @user_class_id %>
+	<%= text_field_tag "behavior[title]" %>
+	<%= select_tag "behavior[score]", options_for_select((-10..10).collect{|x| ["#{x}점", x] }) %>
+	<%= hidden_field_tag "behavior[is_detail]", 1 %>
+	<%= submit_tag "submit" %>
+<% end %>
