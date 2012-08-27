@@ -14,11 +14,13 @@ class Student < ActiveRecord::Base
   	return sum
   end
   def each_score(time)
-  	pos, neg = [0, 0]
+    result = {"POS" => 0, "NEG" => 0, "POS_SUM" => 0, "NEG_SUM" => 0}
   	self.awards.where("created_at >= ?", time).each do |award|
-  		pos += award.behavior.score == 1 ? 1 : 0
-  		neg += award.behavior.score == -1 ? -1 : 0
+  		result["POS"] += award.behavior.score > 0 ? 1 : 0
+  		result["NEG"] += award.behavior.score < 0 ? -1 : 0
+      result["POS_SUM"] += award.behavior.score > 0 ? award.behavior.score : 0
+      result["NEG_SUM"] += award.behavior.score < 0 ? award.behavior.score : 0
   	end
-  	return [pos, neg]
+    return result
   end
 end

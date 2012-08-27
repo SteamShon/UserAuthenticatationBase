@@ -1,9 +1,3 @@
 <ul class="well" id="<%= behavior.id %>">
-	<% if behavior.score > 0 %>
-		<i class="icon-thumbs-up"></i>
-	<% else %>
-		<i class="icon-thumbs-down"></i>
-	<% end %>
-	<%= behavior.title %>
-	<%= remove_link(behavior) %>
+	<p><%= behavior.title %>, <%= behavior.score %>점 <%= remove_link(behavior) %></p>
 </ul>

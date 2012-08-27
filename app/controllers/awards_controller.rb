@@ -18,14 +18,27 @@ class AwardsController < ApplicationController
   def new_multiple
     @student_ids = params[:student_ids]
     @user_class_id = params[:user_class]
+    @is_detail = params[:is_detail]
     respond_to do |format|
-      format.js {}
+      format.js {
+        if @is_detail
+          render 'new_multiple_detail.js.erb'
+        else
+          render 'new_multiple.js.erb'
+        end
+      }
     end
   end
   
   def create_multiple
+    if params[:behavior]
+      @behavior = Behavior.create(params[:behavior])
+      @behavior_id = @behavior.id
+    else
+      @behavior_id = params[:behavior_id]
+    end
     @user_class_id = params[:user_class_id]
-    @behavior_id = params[:behavior_id]
+    #@behavior_id = params[:behavior_id]
     @student_ids = params[:student_ids]
     @students = Student.find(@student_ids)
     @user_class = UserClass.find(@user_class_id)

@@ -14,11 +14,11 @@ class UserClass < ActiveRecord::Base
       UserClass.find(id).behaviors
     end
   end
-  def good_behaviors
-    self.behaviors.where("score = ?", 1)
+  def good_behaviors(is_detail=0)
+    self.behaviors.where("score > ? and is_detail = ?", 0, is_detail)
   end
-  def bad_behaviors
-    self.behaviors.where("score = ?", -1)
+  def bad_behaviors(is_detail=0)
+    self.behaviors.where("score < ? and is_detail = ?", 0, is_detail)
   end
   
   def get_awards(range, student=nil) 

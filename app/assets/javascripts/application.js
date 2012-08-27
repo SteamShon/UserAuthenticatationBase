@@ -28,7 +28,7 @@ function add_fields(link, association, content) {
 }
 
 function toggleAll(){
-	$("input:checkbox").each(function(){
+	$('input:checkbox:not(#is_detail)').each(function(){
 	  $(this).attr('checked', !$(this).attr('checked'));
 	});
 	return false;

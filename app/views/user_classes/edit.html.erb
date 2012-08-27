@@ -1,9 +1,7 @@
 <% provide(:title, "edit class") %>
 <% content_for :scripts do %>
 <script type="text/javascript">
-	$(".draggable").click(function(){
-		$(".draggable").draggable();
-	});
+	$(".draggable").draggable();
 </script>
 <% end %>
 <div id="container">
@@ -36,10 +34,11 @@
 	      	<%= render partial: "students/modal", locals: { user_class: @user_class } %>
 	      </p>
 	      <p id="avatars" style="display:none">
-	      	<% for avatar in current_user.avatars %>
+	      	<% for avatar in Avatar.all %>
 	      		<%= image_tag avatar.photo.url, { class: "draggable", id: "avatar-#{avatar.id}" } %>
 	      	<% end %>
 	      </p>
+
 	      <div class="row">
 			<ul class="students">
 				<%= render partial: "students/list", locals: { user_class: @user_class, students: @students } %>

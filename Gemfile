@@ -17,10 +17,6 @@ gem 'lazy_high_charts', '~> 1.1.5'
 gem 'jquery-rails'
 gem 'heroku'
 
-group :assets do
-	gem 'jquery-ui-rails'
-end
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -34,6 +30,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '1.2.3'
+  gem 'jquery-ui-rails'
 end
 
 group :test, :development do

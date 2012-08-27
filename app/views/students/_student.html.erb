@@ -1,6 +1,15 @@
 <i class="icon-user"></i>
-<h3 align="right"><%= student.each_score(@user_class.created_at)[0] %></h3>
-<h2><%= link_to student.name, 
-new_multiple_awards_path("student_ids[]" => student.id, user_class: @user_class), 
-{ remote: true, "data-toggle" => "modal"} %></h2>
-<h3 align="right"><%= student.each_score(@user_class.created_at)[1] %></h3>
+<% current_award = student.each_score(@user_class.created_at) %>
+<h5 align="right">
+	<%= current_award["POS"] %>개(
+	<%= current_award["POS_SUM"] %>)점
+</h5>
+<h2>
+	<%= link_to student.name, 
+	new_multiple_awards_path("student_ids[]" => student.id, user_class: @user_class), 
+	{ remote: true, "data-toggle" => "modal"} %>
+</h2>
+<h5 align="right">
+	<%= current_award["NEG"] %>개(
+	<%= current_award["NEG_SUM"] %>)점
+</h5>
