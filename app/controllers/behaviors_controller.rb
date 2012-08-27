@@ -1,5 +1,8 @@
 class BehaviorsController < ApplicationController
-	before_filter :signed_in_user, only: [:create]
+	before_filter :signed_in_user, only: [:index, :destroy, :create]
+	def index
+		@behaviors = Behavior.where("title like '%?%'", params[:search])
+	end
 	def create
 		@user_class = UserClass.find(params[:user_class])
 		@score = params[:score]

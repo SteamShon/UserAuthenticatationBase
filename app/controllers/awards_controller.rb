@@ -32,7 +32,13 @@ class AwardsController < ApplicationController
   
   def create_multiple
     if params[:behavior]
+      #@search = Behavior.where("title like '%?%'", params[:behavior][:title])
+      #if @search.any? == false
+      #  flash[:notice] = "#{@saerch.title} is already exist"
+      #  @behavior = @search[0]
+      #else
       @behavior = Behavior.create(params[:behavior])
+      #end
       @behavior_id = @behavior.id
     else
       @behavior_id = params[:behavior_id]
