@@ -213,57 +213,30 @@ input, textarea, select, .uneditable-input {
   word-wrap:break-word; 
 }
 
-@media all {
-  .panel {
-      overflow                    : hidden;
-      position                    : absolute;
-      display                     : block;
-      width                       : 100%;
-      padding-top                 : 60px;
-      padding-bottom              : 60px;
-      top                         : 0;
-      /*height: 100%; */ /* uncomment if desktop */
+@media (max-width: 480px) {
+  .modal {
+      height: 500px; /* Set a default max height of the modal (adjusted later)*/
+      position: fixed; /* Display modal in the centre of your screen */
+      overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+      -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
   }
-
-  .scrollable {
-      overflow                    : scroll;
-      -webkit-overflow-scrolling  : touch;
+  .modal.fade.in{
+      top: 5px; /* Use more screen real estate */
   }
-
-  .insideScrollablePanel {
-      margin-left                 : 5%;
-      margin-right                : 5%;
-      width                       : 90%;
-  }
-
-} /* end of medial all */
-
-/*--- ipad ---*/
-/*--- full screen mode ---*/
-@media (device-width: 768px) and (orientation: portrait) {
-    .panel {
-        height                      : 934px; /*1004-80*/
-    }
+  .modal-body{
+      /* Increase the max height of the modal body to try & avoid both it,
+       * and the modal container having scroll bars which results in odd behavior */ 
+      max-height: 2400px; 
+  }   
 }
 
-/*--- browser mode ---*/
-@media (device-width: 768px) and (orientation: landscape) {
-    .panel {
-        height                      : 668px; /*748-80*/
-    }
-}
-
-/*--- iphone ---*/
-/*--- full screen mode ---*/
-@media (max-width: 480px) and (orientation: portrait) {
-    .panel {
-        height                      : 380px; /*460-80*/
-    }
-}
-
-/*--- browser mode ---*/
-@media (max-width: 480px) and (orientation: landscape) {
-    .panel {
-        height                      : 220px; /*300-80*/
-    }
-}
+/* Now adjust the height so it handles various screen sizes & orientations */
+/* You could make this as granular as you like, or have it more granular at common screen sizes
+ * but it should start at the height we set on .modal (i.e. 500px) & work down */
+@media (max-width: 480px) and (max-height: 500px){.modal{ height: 450px}}
+@media (max-width: 480px) and (max-height: 450px){.modal{ height: 400px}}
+@media (max-width: 480px) and (max-height: 400px){.modal{ height: 350px}}
+@media (max-width: 480px) and (max-height: 350px){.modal{ height: 300px}}
+@media (max-width: 480px) and (max-height: 300px){.modal{ height: 250px}}
+@media (max-width: 480px) and (max-height: 250px){.modal{ height: 200px}}
+@media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}
