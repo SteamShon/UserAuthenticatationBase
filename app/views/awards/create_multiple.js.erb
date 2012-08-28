@@ -10,7 +10,6 @@
 	$("#awardModal").modal('hide');
 	$("#behaviorModal").modal('hide');
 	$("#alertModal").modal('show');
-
 	$(function() { // wait for the DOM
 	    setTimeout(function () {
 	        var $modal = $('#alertModal'); // your selector; cache it; only query the DOM once!
@@ -22,5 +21,9 @@
 	        }, 2000);    
 	    }, 2000); 
 	});
+	
+
+    return this;
+});
 <% end %>
   

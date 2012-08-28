@@ -1,51 +1,49 @@
-<div class="panel">
-	<div class="container-fluid visible-phone">
-	  <div class="row-fluid">
-	    <div class="span2">
-	    	<%= form_tag(new_multiple_awards_path(user_class: @user_class), method: :get,
-	    	remote: true, class: "well form-horizontal", "data-toggle" => "moda") do %>
-		    	<p align="center">
-		    		<%= check_box_tag "is_detail" %>
-		    		<%= link_to "전체선택", '#', onclick: "selectAll()" %>
-		    		<%= link_to "Toggle", '#', onclick: "toggleAll()" %>
-		    	</p>
-	    		<% for student in @user_class.students %>
-					<ul>
-						<%= check_box_tag "student_ids[]", student.id %>
-						<%= student.name %>
-					</ul>
-				<% end %>
-				<p align="center"><%= submit_tag "칭찬/꾸지람 하기", class: "btn btn-mini btn-primary" %></p>
-		    <% end %>
-		</div>
-		<div class="span10">
-		    <div class="row">
-				<div class="span4"><%= "이 수업 시작한 시간: #{Date.today.to_s}" %></div>
-				<div class="span6"><%= link_to "이 수업 마치기", awards_path(user_class: @user_class) %></div>
-			</div>
-			<div class="row">
-				<ul class="students">
-					<% for student in @user_class.students %>
-						<div class="student-item well" id="student-<%= student.id %>">
-							<%= render student %>
-						</div>
-					<% end %>
-				</ul>	      
-			</div>
-			<div class="row">
-				<%= render partial: "awards/modal" %>
-			</div>
-			<div class="row">
-				<div class="span10">
-					<%= render partial: "alert_modal" %>
-				</div>
-			</div> 
-	        <div class="row" id="beep">
-	        </div>
-		</div>
-	  </div>
-	  <div class="row">
-	  	<%= render "behaviors/modal" %>
-	  </div>
+<div class="container-fluid visible-phone">
+  <div class="row-fluid">
+    <div class="span2">
+    	<%= form_tag(new_multiple_awards_path(user_class: @user_class), method: :get,
+    	remote: true, class: "well form-horizontal", "data-toggle" => "moda") do %>
+	    	<p align="center">
+	    		<%= check_box_tag "is_detail" %>
+	    		<%= link_to "전체선택", '#', onclick: "selectAll()" %>
+	    		<%= link_to "Toggle", '#', onclick: "toggleAll()" %>
+	    	</p>
+    		<% for student in @user_class.students %>
+				<ul>
+					<%= check_box_tag "student_ids[]", student.id %>
+					<%= student.name %>
+				</ul>
+			<% end %>
+			<p align="center"><%= submit_tag "칭찬/꾸지람 하기", class: "btn btn-mini btn-primary" %></p>
+	    <% end %>
 	</div>
+	<div class="span10">
+	    <div class="row">
+			<div class="span4"><%= "이 수업 시작한 시간: #{Date.today.to_s}" %></div>
+			<div class="span6"><%= link_to "이 수업 마치기", awards_path(user_class: @user_class) %></div>
+		</div>
+		<div class="row">
+			<ul class="students">
+				<% for student in @user_class.students %>
+					<div class="student-item well" id="student-<%= student.id %>">
+						<%= render student %>
+					</div>
+				<% end %>
+			</ul>	      
+		</div>
+		<div class="row">
+			<%= render partial: "awards/modal" %>
+		</div>
+		<div class="row">
+			<div class="span10">
+				<%= render partial: "alert_modal" %>
+			</div>
+		</div> 
+        <div class="row" id="beep">
+        </div>
+	</div>
+  </div>
+  <div class="row">
+  	<%= render "behaviors/modal" %>
+  </div>
 </div>
