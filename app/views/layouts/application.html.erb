@@ -9,8 +9,12 @@
   <%= render 'layouts/shim' %>
   <%= yield :head %>
   <%= yield :scripts %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="apple-touch-icon" href="icon.png"/>
 </head>
 <body>
 <%= render 'layouts/header' %>
