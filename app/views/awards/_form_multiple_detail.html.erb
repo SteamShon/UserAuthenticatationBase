@@ -1,13 +1,16 @@
+<div class="row">
+	<div class="span2">
 <%= form_tag(create_multiple_awards_path, { remote: true }) do %>
 	<% for student_id in @student_ids %>
 		<%= hidden_field_tag "student_ids[]", student_id %>
 	<% end %>
 	<%= hidden_field_tag "user_class_id", @user_class_id %>
-	<%= text_field_tag "behavior[title]" %>
+	<%= text_field_tag "behavior[title]", nil, :maxlength => 15 %>
 	<%= select_tag "behavior[score]", 
 		options_for_select((-10..10).collect{|x| ["#{x}점", x] }) %>
 	<%= select_tag "behavior[is_detail]", 
-		options_for_select({"이 항목을 칭찬/꾸지람 목록에 추가하기" => 0, 
-			"이 항목을 추가 하지 않고 이번만 사용하기" => 1}, 1) %>
+		options_for_select({"이 항목을 추가하기" => 0, "이번만 사용하기" => 1}, 1) %>
 	<%= submit_tag "submit" %>
 <% end %>
+	</div>
+</div>
