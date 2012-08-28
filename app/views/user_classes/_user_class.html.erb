@@ -14,8 +14,7 @@
 		</div>
 	</div>
 	<div class="pager">
-		<li><%= link_to "시작 하기", user_class_path(user_class, 
-	started: user_class.update_attributes(created_at: Time.now)) %></li>
+		<li><%= link_to "시작 하기", user_class_path(user_class)) %></li>
 		<li><%= link_to "기록 보기", awards_path(user_class: user_class) %></li>
 	</div>
 </div>

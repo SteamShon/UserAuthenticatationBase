@@ -3,9 +3,9 @@ class AwardsController < ApplicationController
 
   def index
     @user_class = UserClass.find(params[:user_class])
-    @user_class.update_attributes(updated_at: DateTime.now)
-    @start_date = params[:start_date] ? DateTime.parse(params[:start_date]) : @user_class.created_at
-    @end_date = params[:end_date] ? DateTime.parse(params[:end_date]) : @user_class.updated_at
+    #@user_class.update_attributes(updated_at: DateTime.now)
+    @start_date = params[:start_date] ? DateTime.parse(params[:start_date]) : Date.today
+    @end_date = params[:end_date] ? DateTime.parse(params[:end_date]) : Date.today
 
     @awards_group_by = @user_class.get_awards(@start_date..@end_date)
     @charts = pie_chart(@awards_group_by, "student awards report")
