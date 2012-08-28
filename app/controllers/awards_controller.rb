@@ -37,10 +37,12 @@ class AwardsController < ApplicationController
       #  flash[:notice] = "#{@saerch.title} is already exist"
       #  @behavior = @search[0]
       #else
+      @is_detail = true
       @behavior = Behavior.create(params[:behavior])
       #end
       @behavior_id = @behavior.id
     else
+      @is_detail = false
       @behavior_id = params[:behavior_id]
     end
     @user_class_id = params[:user_class_id]
