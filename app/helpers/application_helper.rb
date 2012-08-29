@@ -21,11 +21,6 @@ module ApplicationHelper
     link_to_function(name, "add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
   end
   
-  def broadcast(channel, &block)
-    message = {:channel => channel, :data => capture(&block), :ext => {:auth_token => FAYE_TOKEN}}
-    uri = URI.parse("http://faye-on-heroku-ydy.herokuapp.com/faye")
-    Net::HTTP.post_form(uri, :message => message.to_json)
-  end
 
   def remove_link(request)
     link_to image_tag("http://png-2.findicons.com/files//icons/2015/24x24_free_application/24/erase.png"), 

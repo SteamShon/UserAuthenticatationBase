@@ -16,6 +16,7 @@ gem 'thin'
 gem 'lazy_high_charts', '~> 1.1.5'
 gem 'jquery-rails'
 gem 'heroku'
+gem 'private_pub'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

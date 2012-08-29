@@ -1,14 +1,19 @@
-<% broadcast "/awards/new" do %>
+<% publish_to "/awards/new" do %>
 	<% for student in @students %>
 		$("#student-<%= student.id %>").html("<%= escape_javascript(render(student)) %>");	
 	<% end %>
 	$("#alertModal .modal-header").html("<h1><%= "#{Student.multiple_names(@student_ids)}" %></h1>");
 	$("#alertModal .modal-body").html("<h2><%= "#{@behavior.score} for #{@behavior.title}!" %></h2>");
-	
-    $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
+	//$("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
+    
     $("#behaviorModal").modal('hide');
 	$("#awardModal").modal('hide');
 	$("#alertModal").modal('show');
+	$('#behaviorModal').on('shown', function(e) {
+	    var modal = $(this);
+	    modal.css('margin-top', (modal.outerHeight() / 2) * -1).css('margin-left', (modal.outerWidth() / 2) * -1);
+	    return this;
+	});
 	$(function() { // wait for the DOM
 	    setTimeout(function () {
 	        var $modal = $('#alertModal'); // your selector; cache it; only query the DOM once!
@@ -20,7 +25,5 @@
 	        }, 2000);    
 	    }, 2000); 
 	});
-	return this;
-});
 <% end %>
   
