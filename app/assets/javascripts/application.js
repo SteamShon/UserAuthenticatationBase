@@ -43,7 +43,7 @@ function selectAll(){
 
 
 $(function() {
-  var faye = new Faye.Client('http://fayeredis.herokuapp.com/faye');
+  var faye = new Faye.Client('http://faye-on-heroku-ydy.herokuapp.com/faye');
   faye.subscribe("/awards/new", function(data) {
     eval(data);
   });

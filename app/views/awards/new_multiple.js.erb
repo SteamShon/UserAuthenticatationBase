@@ -1,6 +1,7 @@
 $('#awardModal').on('shown', function(e) {
     var modal = $(this);
-    modal.css('margin-top', (modal.outerHeight() / 2) * -1).css('margin-left', (modal.outerWidth() / 2) * -1);
+    modal.css('margin-top', (modal.outerHeight() / 2) * -1)
+    .css('margin-left', (modal.outerWidth() / 2) * -1);
     return this;
 });
 $("#tab1").html("<%= escape_javascript(render :partial => 'awards/form_multiple', 

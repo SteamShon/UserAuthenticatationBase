@@ -6,12 +6,8 @@
 	$("#alertModal .modal-body").html("<h2><%= "#{@behavior.score} for #{@behavior.title}!" %></h2>");
 	
     $("#beep").html("<embed src='http://teacher-note.herokuapp.com/beep-24.wav' hidden=indextrue autostart=true loop=false>");
-    <% if @is_detail %>
-    	$("#behaviorModal").modal('hide');
-	<% else %>
-		$("#awardModal").modal('hide');
-	<% end %>	
-
+    $("#behaviorModal").modal('hide');
+	$("#awardModal").modal('hide');
 	$("#alertModal").modal('show');
 	$(function() { // wait for the DOM
 	    setTimeout(function () {
